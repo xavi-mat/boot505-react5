@@ -1,6 +1,12 @@
-function Restaurant() {
+import RestHeader from "./RestHeader/RestHeader"
+import RestHome from "./RestHome/RestHome"
+
+function Restaurant({dishes}) {
   return (
-    <div>Restaurant</div>
+    <div>
+    <RestHeader/>
+    <RestHome dishes={dishes}/>
+    </div>
   )
 }
 

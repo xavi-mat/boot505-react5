@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainSelector from './components/MainSelector/MainSelector';
+import MainCenter from './components/MainCenter/MainCenter';
 import PersContact from './components/Personal/PersContact/PersContact';
 import PersHome from './components/Personal/PersHome/PersHome';
 import PersOther from './components/Personal/PersOther/PersOther';
@@ -25,19 +26,43 @@ const fakeDB = {
   },
 }
 
+const dishes = [
+  {
+    id: 1,
+    name: 'Pollo teriyaki',
+    description: 'Este es el plato 1',
+    price: 10,
+    img: 'https://bakeitwithlove.com/wp-content/uploads/2021/11/teriyaki-chicken-stir-fry-sq.jpg'
+  },
+  {
+    id: 2,
+    name: 'Sushi',
+    description: 'Este es el plato 2',
+    price: 20,
+    img: 'https://t1.rg.ltmcdn.com/es/posts/1/3/0/hacer_sushi_paso_a_paso_16031_600.jpg'
+  },
+  {
+    id: 3,
+    name: 'Ramen',
+    description: 'Este es el plato 3',
+    price: 15,
+    img: 'https://media-cdn.tripadvisor.com/media/photo-s/1c/f4/3c/12/photo2jpg.jpg'
+  }
+]
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <MainSelector />
         <Routes>
-          <Route path="/" element={null} />
+          <Route path="/" element={<MainCenter />} />
           <Route
             path="/personal"
             element={<PersHome bioItems={bioItems} db={fakeDB} />} />
           <Route path='/personal/contact' element={<PersContact db={fakeDB} />} />
           <Route path='/personal/other' element={<PersOther db={fakeDB} />} />
-          <Route path="/restaurant" element={<Restaurant />} />
+          <Route path="/restaurant" element={<Restaurant dishes={dishes} />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -23,7 +23,7 @@ Xavi Matoses: [GitHub](@xavi-mat) | [LinkedIn](https://www.linkedin.com/in/xavie
 
 ### 2. Restaurant Page
 * Create a 'Reserve' component
-    * Tiene que contener un formulario que recoja los datos de la reserva( ej. Nombre de quien hace la reserva, día de la reserva, etc)
+    * With a form to get data: Name, day, etc.
     * Los datos del formulario deberán guardarse en el localStorage
     * Una vez se guarden los datos del formulario redireccionar a la vista principal de la página
 * Implementa React Router en tu página
