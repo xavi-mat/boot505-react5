@@ -5,7 +5,8 @@
     top: 5px;
     z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 5px;
     align-items: center;
     background-color: #00000088;
     padding: 1rem;
@@ -17,6 +18,9 @@
 
 .floating-button {
     all: unset;
-    color: white;
     cursor: pointer;
+    border-radius: 30%;
+}
+.floating-button:hover {
+    background-color: #FFFFFF66;
 }

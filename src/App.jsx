@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainSelector from './components/MainSelector/MainSelector';
 import PersContact from './components/Personal/PersContact/PersContact';
 import PersHome from './components/Personal/PersHome/PersHome';
-import Personal from './components/Personal/Personal';
 import PersOther from './components/Personal/PersOther/PersOther';
 import Restaurant from './components/Restaurant/Restaurant';
 
@@ -14,6 +13,18 @@ const bioItems = [
   `Soy Doctor en Ciencias Bíblicas 📖, y he sido docente universitario 🎓 durante 16 años en Barcelona y Roma.`
 ];
 
+const fakeDB = {
+  users: [],
+  loadUsers: function() {
+    this.users = localStorage.S5_users ? JSON.parse(localStorage.S5_users) : [];
+    },
+  saveUser: function(user) {
+    this.loadUsers();
+    this.users.unshift(user);
+    localStorage.S5_users = JSON.stringify(this.users);
+  },
+}
+
 function App() {
   return (
     <>
@@ -21,10 +32,11 @@ function App() {
         <MainSelector />
         <Routes>
           <Route path="/" element={null} />
-          <Route path="/personal" element={<Personal />} />
-          <Route path="/personal/home" element={<PersHome bioItems={bioItems} />} />
-          <Route path='/personal/contact' element={<PersContact />} />
-          <Route path='/personal/other' element={<PersOther />} />
+          <Route
+            path="/personal"
+            element={<PersHome bioItems={bioItems} db={fakeDB} />} />
+          <Route path='/personal/contact' element={<PersContact db={fakeDB} />} />
+          <Route path='/personal/other' element={<PersOther db={fakeDB} />} />
           <Route path="/restaurant" element={<Restaurant />} />
         </Routes>
       </BrowserRouter>
