@@ -33,6 +33,6 @@ Xavi Matoses: [GitHub](@xavi-mat) | [LinkedIn](https://www.linkedin.com/in/xavie
         * Another one ✔️
 
 ### Extra
-* Improve dessign
+* Improve dessign ✔️
 * Try new validations on forms
 * Forms with classes
