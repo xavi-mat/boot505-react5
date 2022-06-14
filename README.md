@@ -22,17 +22,17 @@ Xavi Matoses: [GitHub](@xavi-mat) | [LinkedIn](https://www.linkedin.com/in/xavie
         * Another one ✔️
 
 ### 2. Restaurant Page
-* Create a 'Reserve' component
-    * With a form to get data: Name, day, etc.
-    * Los datos del formulario deberán guardarse en el localStorage
-    * Una vez se guarden los datos del formulario redireccionar a la vista principal de la página
-* Implementa React Router en tu página
-    * Crea un navbar con al menos tres Link
-        * El de Home
-        * El de Reserve
-        * Y otro componente que crees tu
+* Create a 'Reserve' component ✔️
+    * With a form to get data: Name, day, etc. ✔️
+    * Data will be saved in localStorage  ✔️
+    * Redirect after saving ✔️
+* Use React Router ✔️
+    * Navbar with at least three links ✔️
+        * Home ✔️
+        * Reserve ✔️
+        * Another one ✔️
 
 ### Extra
-* Mejora el diseño
-* Con lo aprendido en clase o investigando implementa nuevas validaciones en tus formularios
-* Investiga cómo hacer los formularios con classes e implementalos.
+* Improve dessign
+* Try new validations on forms
+* Forms with classes

@@ -5,6 +5,8 @@ import PersContact from './components/Personal/PersContact/PersContact';
 import PersHome from './components/Personal/PersHome/PersHome';
 import PersOther from './components/Personal/PersOther/PersOther';
 import Restaurant from './components/Restaurant/Restaurant';
+import RestReserve from './components/Restaurant/RestReserve/RestReserve';
+import RestList from './components/Restaurant/RestList/RestList';
 
 const bioItems = [
   `Nací en Sueca, una pequeña ciudad de Valencia rodeada de arrozales 🌾🌾 y naranjos 🍊🍊, en una familia dedicada al cultivo 🚜 del arroz 🌾 desde hace siglos ⌛.`,
@@ -16,14 +18,24 @@ const bioItems = [
 
 const fakeDB = {
   users: [],
-  loadUsers: function() {
+  loadUsers: function () {
     this.users = localStorage.S5_users ? JSON.parse(localStorage.S5_users) : [];
-    },
-  saveUser: function(user) {
+  },
+  saveUser: function (user) {
     this.loadUsers();
     this.users.unshift(user);
     localStorage.S5_users = JSON.stringify(this.users);
   },
+  reservations: [],
+  loadReservations: function () {
+    this.reservations = localStorage.S5_reservations ? JSON.parse(localStorage.S5_reservations) : [];
+  },
+  saveReservation: function (reservation) {
+    this.loadReservations();
+    this.reservations.unshift(reservation);
+    localStorage.S5_reservations = JSON.stringify(this.reservations);
+  },
+
 }
 
 const dishes = [
@@ -63,6 +75,8 @@ function App() {
           <Route path='/personal/contact' element={<PersContact db={fakeDB} />} />
           <Route path='/personal/other' element={<PersOther db={fakeDB} />} />
           <Route path="/restaurant" element={<Restaurant dishes={dishes} />} />
+          <Route path="/restaurant/reserve" element={<RestReserve db={fakeDB} />} />
+          <Route path="/restaurant/reservations" element={<RestList db={fakeDB} />} />
         </Routes>
       </BrowserRouter>
     </>
