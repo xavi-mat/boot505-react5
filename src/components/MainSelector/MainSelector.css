@@ -1,0 +1,22 @@
+.floating-buttons {
+    all: unset;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00000088;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 50px;
+    height: 50px;
+}
+
+.floating-button {
+    all: unset;
+    color: white;
+    cursor: pointer;
+}

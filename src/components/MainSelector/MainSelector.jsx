@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import './MainSelector.css';
 
 function MainSelector() {
   return (
-    <div className="d-flex justify-content-around bg-info">
-      <Link className="btn btn-warning" to="/personal">Personal</Link>
-      <Link className="btn btn-warning" to="/restaurant">Restaurant</Link>
+    <div className="floating-buttons">
+      <Link className="floating-button" to="/personal">Pers</Link>
+      <Link className="floating-button" to="/restaurant">Rest</Link>
     </div>
   )
 }

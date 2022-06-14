@@ -1,8 +1,25 @@
+import { useState } from "react"
 import PersNav from "../PersNav/PersNav"
 
 function PersContact() {
-  const onChangeHandler = (ev) => { }
-  const onSubmitHandler = (ev) => { }
+
+  const initialValues = {
+    name: "",
+    email: "",
+    pass: "",
+  }
+  const [data, setData] = useState({...initialValues});
+
+  const onChangeHandler = (ev) => {
+    setData({
+      ...data,
+      [ev.target.name]: ev.target.value,
+    })
+  }
+  const onSubmitHandler = (ev) => {
+    ev.preventDefault();
+    console.log(data)
+  }
   return (
     <div>
       <PersNav />
@@ -10,35 +27,38 @@ function PersContact() {
         <h1>Contact Form</h1>
         <form onSubmit={onSubmitHandler}>
           <div className="d-md-flex">
-            <div class="m-3">
-              <label class="form-label">Name:</label>
+            <div className="m-3">
+              <label className="form-label">Name:</label>
               <input
                 type="text"
                 name="name"
-                class="form-control"
+                value={data.name}
+                className="form-control"
                 onChange={onChangeHandler}
                 placeholder="Name" />
             </div>
-            <div class="m-3">
-              <label class="form-label">Email:</label>
+            <div className="m-3">
+              <label className="form-label">Email:</label>
               <input
                 type="email"
                 name="email"
-                class="form-control"
+                value={data.email}
+                className="form-control"
                 onChange={onChangeHandler}
                 placeholder="Email" />
             </div>
-            <div class="m-3">
-              <label class="form-label">Password:</label>
+            <div className="m-3">
+              <label className="form-label">Password:</label>
               <input
                 type="password"
                 name="pass"
-                class="form-control"
+                value={data.pass}
+                className="form-control"
                 onChange={onChangeHandler}
                 placeholder="Password" />
             </div>
           </div>
-          <div class="m-3">
+          <div className="m-3">
             <input type="submit" value="Send" />
           </div>
         </form>
