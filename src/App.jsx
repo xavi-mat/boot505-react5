@@ -35,7 +35,6 @@ const fakeDB = {
     this.reservations.unshift(reservation);
     localStorage.S5_reservations = JSON.stringify(this.reservations);
   },
-
 }
 
 const dishes = [
